@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.1 RC1
+
+- Fix nested heading level in Content panel tree
+
 ### 2.0.0
 
 - Work in progress (checkout current master)
@@ -34,16 +38,14 @@
 - Consider `<collab>` elements in citations
 - Added another fallback for citation title extraction (`<source>`)
 
-
 ### 1.0.0 RC1
 
 - Added TRIM_WHITESPACE option to converter
 - Updated Manual and About document
-- Link all documentation from http://lens.elifesciences.org
+- Link all documentation from <http://lens.elifesciences.org>
 - Deal better with author groups
 - Rename Person -> Contributor (consistent with JATS)
 - Added jumpmarks for the mobile version
-
 
 ### 0.3.0
 

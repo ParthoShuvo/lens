@@ -42,23 +42,19 @@ TOCView.Prototype = function() {
     _.each(tocNodes, function(node) {
       var nodeView = this.viewFactory.createView(node);
       var level = node.getLevel();
-      if (level < 5) {
-        if (level === -1) {
-          level = lastLevel + 1;
-        } else {
-          lastLevel = level;
-        }
-        var el = nodeView.renderTocItem();
-        var $el = $(el);
-        el.id = "toc_" + node.id;
-        // TODO: change 'heading-ref' to 'toc-node'
-        $el.addClass('heading-ref');
-        $el.addClass('level-' + level);
-        $el.click(_.bind(this.onClick, this, node.id));
-        this.el.appendChild(el);
-
-
+      if (level === -1) {
+        level = lastLevel + 1;
+      } else {
+        lastLevel = level;
       }
+      var el = nodeView.renderTocItem();
+      var $el = $(el);
+      el.id = "toc_" + node.id;
+      // TODO: change 'heading-ref' to 'toc-node'
+      $el.addClass('heading-ref');
+      $el.addClass('level-' + level);
+      $el.click(_.bind(this.onClick, this, node.id));
+      this.el.appendChild(el);
     }, this);
 
     return this;
