@@ -1,8 +1,9 @@
 # Changelog
 
-### 2.0.1 RC1
+### 2.0.1 SNAPSHOT
 
 - Fix nested heading level in Content panel tree
+- Remove Abstract from cover view
 
 ### 2.0.0
 

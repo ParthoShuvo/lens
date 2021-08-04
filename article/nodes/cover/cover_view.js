@@ -140,11 +140,13 @@ CoverView.Prototype = function() {
            }));
       }
     }
-    if (node.getAbstract()) {
-        var absView = this.viewFactory.createView(node.getAbstract());
-        var absViewEL = absView.render().el;
-        this.content.appendChild(absViewEL);
-    }
+
+    // #12442 Remove Abstract from cover view
+    // if (node.getAbstract()) {
+    //     var absView = this.viewFactory.createView(node.getAbstract());
+    //     var absViewEL = absView.render().el;
+    //     this.content.appendChild(absViewEL);
+    // }
 
 
     return this;
