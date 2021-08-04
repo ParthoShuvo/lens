@@ -1,12 +1,10 @@
 # Changelog
 
-### 2.0.1 SNAPSHOT
+### 2.0.1 RC1
 
 - For issue #12442
 - Fix nested heading level in Contents panel tree
 - Remove Abstract from cover view
-- Add Abstract header at top level in Contents panel tree view
-- Add Abstract header and its content in Document view
 
 ### 2.0.0
 
