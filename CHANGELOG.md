@@ -2,8 +2,7 @@
 
 ### 2.0.1 RC1
 
-- For issue #12442
-- Fix nested heading level in Contents panel tree
+- Fix nested heading level in Content panel tree
 - Remove Abstract from cover view
 
 ### 2.0.0

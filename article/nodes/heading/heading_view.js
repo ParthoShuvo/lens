@@ -16,53 +16,26 @@ var HeadingView = function (node, viewFactory) {
 HeadingView.Prototype = function () {
 
     this.render = function () {
-
-        NodeView.prototype.render.call(this);
-
-        // #12442 Add Abstract header and content in document view        
-        if (this.isAbstractHeader()) {
-            var titleView = this.createTextPropertyView([this.node.id, 'content'], {
-                classes: 'title'
-            });
-            var titleElem = titleView.render().el;
-            titleElem.innerText = 'Abstract';
-            this.content.appendChild(titleElem);
-            var absViewEL = this.getAbstractContentView();
-            if (absViewEL) {
-                this.$el.append(absViewEL);
-            }
-            return this;
-        }
-
-
         if (this.node.content.length) {
+            NodeView.prototype.render.call(this);
+            // Heading title
+
             var titleView = this.createTextPropertyView([this.node.id, 'content'], {
                 classes: 'title'
             });
 
-            
             if (this.node.label) {
-                
                 var labelEl = $$('.label', {text: this.node.label});
-                
                 this.content.appendChild(labelEl);
             }
-            
+
             this.content.appendChild(titleView.render().el);
         }
-        
         return this;
     };
 
     this.renderTocItem = function () {
-        var el = $$('div'); 
-        // #12442 Add Abstract header at top level in Contents Tree view
-        if (this.isAbstractHeader()) {
-            var titleEl = $$('span');
-            titleEl.innerText = 'Abstract';
-            el.appendChild(titleEl);
-            return el;
-        }
+        var el = $$('div');
         if (this.node.label) {
             var labelEl = $$('.label', {text: this.node.properties.label});
             el.appendChild(labelEl);
@@ -90,15 +63,6 @@ HeadingView.Prototype = function () {
 
         return el;
     };
-
-    this.isAbstractHeader = function() {
-        return this.node.level === 1 && !this.node.content.length;
-    }
-
-    this.getAbstractContentView = function() {
-        var absView = this.viewFactory.createView(this.node.getAbstract());
-        return absView.render().el.querySelector('div.abstract-content');
-    }
 
 };
 
