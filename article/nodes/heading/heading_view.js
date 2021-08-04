@@ -16,10 +16,10 @@ var HeadingView = function (node, viewFactory) {
 HeadingView.Prototype = function () {
 
     this.render = function () {
+
         NodeView.prototype.render.call(this);
 
-        // #12442 Add Abstract header and content in document view
-        
+        // #12442 Add Abstract header and content in document view        
         if (this.isAbstractHeader()) {
             var titleView = this.createTextPropertyView([this.node.id, 'content'], {
                 classes: 'title'
@@ -55,8 +55,7 @@ HeadingView.Prototype = function () {
     };
 
     this.renderTocItem = function () {
-        var el = $$('div');
-
+        var el = $$('div'); 
         // #12442 Add Abstract header at top level in Contents Tree view
         if (this.isAbstractHeader()) {
             var titleEl = $$('span');
@@ -64,9 +63,8 @@ HeadingView.Prototype = function () {
             el.appendChild(titleEl);
             return el;
         }
-
         if (this.node.label) {
-            var labelEl = $$('.label', {text: this.node.label});
+            var labelEl = $$('.label', {text: this.node.properties.label});
             el.appendChild(labelEl);
         }
         var titleEl = $$('span');
@@ -101,6 +99,7 @@ HeadingView.Prototype = function () {
         var absView = this.viewFactory.createView(this.node.getAbstract());
         return absView.render().el.querySelector('div.abstract-content');
     }
+
 };
 
 HeadingView.Prototype.prototype = NodeView.prototype;
