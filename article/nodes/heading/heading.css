@@ -30,3 +30,10 @@
 .content-node.heading.level-3 .content {
   font-size: 18px;
 }
+
+ /* #12442 Abstract content */
+.abstract-content .content {
+  font-size: 17px !important;
+  font-weight: normal !important;
+  line-height: 28.5px !important;
+}

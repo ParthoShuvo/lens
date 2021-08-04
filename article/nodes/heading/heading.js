@@ -66,6 +66,10 @@ Heading.Prototype = function () {
         return this.level;
     }
 
+    this.getAbstract = function() {
+        return this.document.nodes.abstract_1;
+    }
+
 };
 
 Heading.Prototype.prototype = Text.prototype;
