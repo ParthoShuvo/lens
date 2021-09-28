@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 gulp.task('default', function () {
     gulp.src(['**/*.*'])
-        .pipe(gulp.dest('/home/wit/projects/UBHD-Lens/node_modules/lens'));
+        .pipe(gulp.dest('./dist/lens'));
 });
 
 gulp.task('watch', function() {
