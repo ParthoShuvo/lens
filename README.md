@@ -33,6 +33,11 @@ For Lens development, you need to have Node.js >=0.10.x installed.
 
 You need to repeat that install step whenever you updated the screwdriver repo.
 
+### How to Build
+1. run ```sudo npm -g install gulp gulp-sass gulp-uglify browserify gulp-rename through2 path gulp-livereload rename st```
+2. run ```npm i```
+3. run ```gulp```
+
 ### Setup
 
 1. Clone the `lens-starter` repository
